@@ -9,6 +9,9 @@
     "web": "expo start --web",
     "eject": "expo eject"
   },
+  "rules": {
+    "vue/comment-directive": "off"
+  },
   "dependencies": {
     "expo": "~44.0.0",
     "expo-status-bar": "~1.2.0",

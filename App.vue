@@ -1,8 +1,32 @@
 <template>
-  <view class="container">
-    <text class="text-color-primary">My Vue Native App</text>
+<view class="container">
+    <HomeScreen v-if="activeScreen === 'homeScreen' "/>
+    <Screen1 v-if="activeScreen === 'screen1'" />
+    <button title="Перейти" :on-press="() => navigate('screen1')" />
   </view>
 </template>
+
+<script>
+// https://cloud.mail.ru/public/PWBb/MeRTo92eB/3.%20First%20Steps/
+
+import HomeScreen from './src/screens/HomeScreen'
+import Screen1 from './src/screens/Screen1'
+export default {
+  components: {
+    HomeScreen, Screen1
+  },
+  data () {
+    return {
+      activeScreen: 'homeScreen'
+    }
+  },
+  methods: {
+    navigate (screen) {
+      this.activeScreen = screen
+    }
+  }
+}
+</script>
 
 <style>
 .container {
